@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 
 import BreadDetailScreen from '../screens/BreadDetailScreen'
+import CartScreen from '../screens/CartScreen'
 import CategoriesScreen from '../screens/CategoriesScreen'
 import CategoryBreadScreen from '../screens/CategoryBreadScreen'
 import Colors from '../constants/Colors'
@@ -16,16 +17,17 @@ const BreadNavigator = () => {
             <Stack.Navigator initialRouteName="Home"
                 screenOptions={{
                     headerStyle: {
-                        backgroundColor: Platform.OS === 'ios' ?  '' : Colors.primaryColor ,
+                        backgroundColor: Platform.OS === 'ios' ? '' : Colors.primaryColor,
                     },
-                    headerTintColor: Platform.OS === 'ios' ? Colors.primaryColor: 'white' ,
+                    headerTintColor: Platform.OS === 'ios' ? Colors.primaryColor : 'white',
                     headerTitleStyle: {
                         fontWeight: 'bold',
                     },
                 }}>
                 <Stack.Screen name='Home' component={CategoriesScreen} options={{ title: 'Nuestra Panaderia' }} />
-                <Stack.Screen name='BreadCategory' component={CategoryBreadScreen} options={({route}) => ({title: route.params.name})}  />
-                <Stack.Screen name='DetailBread' component={BreadDetailScreen} options={({route}) => ({title: route.params.name})} />
+                <Stack.Screen name='BreadCategory' component={CategoryBreadScreen} options={({ route }) => ({ title: route.params.name })} />
+                <Stack.Screen name='DetailBread' component={BreadDetailScreen} options={({ route }) => ({ title: route.params.name })} />
+                <Stack.Screen name='Cart' component={CartScreen} options={{ title: "Carrito" }} />
             </Stack.Navigator>
         </NavigationContainer>
     )

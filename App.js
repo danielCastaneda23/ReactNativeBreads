@@ -5,7 +5,9 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import AppLoading from 'expo-app-loading';
 import BreadNavigator from './navigation/BreadNavigator';
+import { Provider } from 'react-redux';
 import { StatusBar } from 'expo-status-bar';
+import store from './store';
 
 const fetchFonts = () => {
   Font.loadAsync({
@@ -27,6 +29,9 @@ export default function App() {
   }
   
   return (
-   <BreadNavigator />
+    <Provider store = {store}>
+      <BreadNavigator />
+    </Provider>
+   
   );
 }
