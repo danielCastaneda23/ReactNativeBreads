@@ -10,26 +10,24 @@ import { Platform } from 'react-native-web';
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 
-const Stack = createStackNavigator();
+const BreadStack = createStackNavigator();
 const BreadNavigator = () => {
     return (
-        <NavigationContainer>
-            <Stack.Navigator initialRouteName="Home"
-                screenOptions={{
-                    headerStyle: {
-                        backgroundColor: Platform.OS === 'ios' ? '' : Colors.primaryColor,
-                    },
-                    headerTintColor: Platform.OS === 'ios' ? Colors.primaryColor : 'white',
-                    headerTitleStyle: {
-                        fontWeight: 'bold',
-                    },
-                }}>
-                <Stack.Screen name='Home' component={CategoriesScreen} options={{ title: 'Nuestra Panaderia' }} />
-                <Stack.Screen name='BreadCategory' component={CategoryBreadScreen} options={({ route }) => ({ title: route.params.name })} />
-                <Stack.Screen name='DetailBread' component={BreadDetailScreen} options={({ route }) => ({ title: route.params.name })} />
-                <Stack.Screen name='Cart' component={CartScreen} options={{ title: "Carrito" }} />
-            </Stack.Navigator>
-        </NavigationContainer>
+        <BreadStack.Navigator initialRouteName="Home"
+            screenOptions={{
+                headerStyle: {
+                    backgroundColor: Platform.OS === 'ios' ? '' : Colors.primaryColor,
+                },
+                headerTintColor: Platform.OS === 'ios' ? Colors.primaryColor : 'white',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },
+            }}>
+            <BreadStack.Screen name='Home' component={CategoriesScreen} options={{ title: 'Nuestra Panaderia' }} />
+            <BreadStack.Screen name='BreadCategory' component={CategoryBreadScreen} options={({ route }) => ({ title: route.params.name })} />
+            <BreadStack.Screen name='DetailBread' component={BreadDetailScreen} options={({ route }) => ({ title: route.params.name })} />
+            <BreadStack.Screen name='Cart' component={CartScreen} options={{ title: "Carrito" }} />
+        </BreadStack.Navigator>
     )
 }
 
