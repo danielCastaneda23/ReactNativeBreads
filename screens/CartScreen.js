@@ -10,9 +10,10 @@ const CartScreen = () => {
     const dispatch = useDispatch()
     const items = useSelector(state => state.cart.items);
     const total = useSelector(state => state.cart.total)
+    const user = useSelector(state => state.auth.user)
 
     const handleDeleteItem = (id) => dispatch(deleteItem(id))
-    const handleConfirmCart = () => dispatch(confirmCart(items))
+    const handleConfirmCart = () => dispatch(confirmCart(items, user))
     const renderItem = (data) => {
         return (
             <CartItem item={data.item} onDelete={handleDeleteItem} />

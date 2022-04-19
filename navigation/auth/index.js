@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 
-import AuthScreen from '../screens/user/AuthScreen';
+import AuthScreen from '../../screens/user/AuthScreen';
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 

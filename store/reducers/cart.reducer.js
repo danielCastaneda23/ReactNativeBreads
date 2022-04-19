@@ -3,24 +3,7 @@ import { ADD_ITEM, CONFIRM_CART, DELETE_ITEM } from "../actions/cart.action";
 import { interpolateNode } from "react-native-reanimated";
 
 const itemsCart = [
-    {
-        id: '1',
-        name: 'Pan Ciabatta',
-        price: 1200,
-        quantity: 2,
-    },
-    {
-        id: '2',
-        name: 'Pan Baguette',
-        price: 1500,
-        quantity: 3,
-    },
-    {
-        id: '4',
-        name: 'Pan de Molde Integral',
-        price: 3300,
-        quantity: 1,
-    }
+    
 ]
 
 const sumTotal = list => list
@@ -63,6 +46,7 @@ const CartReducer = (state = INITIAL_STATE, action) => {
                 items: cleanCart,
                 total: sumTotal(cleanCart)
             }
+        
 
         default:
             return { ...state }

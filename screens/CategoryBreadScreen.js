@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { BREADS } from '../data/breads'
 import BreadItem from '../components/BreadItem'
 import React from 'react'
-import ShowCart from '../components/ShowCart'
 import { useEffect } from 'react'
 
 const CategoryBreadScreen = ({ navigation, route }) => {
@@ -29,7 +28,6 @@ const CategoryBreadScreen = ({ navigation, route }) => {
                 renderItem={renderItem}
                 keyExtractor={item => item.id}
             />
-            <ShowCart navigation={navigation} />
         </View>
 
 

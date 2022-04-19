@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 
-import AuthNavigator from './AuthNavigator'
-import BreadNavigator from './BreadNavigator'
+import AuthNavigator from './auth'
 import { NavigationContainer } from '@react-navigation/native'
+import TabNavigator from './tab'
 import { useSelector } from 'react-redux'
 
 export default () => {
@@ -10,7 +10,7 @@ export default () => {
     return(
         <NavigationContainer>
             {loggedIn
-                ? <BreadNavigator/>
+                ? <TabNavigator/>
                 : <AuthNavigator />
 
             }

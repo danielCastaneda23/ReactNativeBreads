@@ -15,28 +15,29 @@ export const deleteItem = itemID => ({
     itemID,
 })
 
-export const confirmCart = (payload) => {
+export const confirmCart = (payload, user) => {
     return async (dispatch) => {
         try {
-            const response = await fetch(`${URL_API}/carrito.json`, {
+            const response = await fetch(`${URL_API}/ordenes.json`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
                     date: Date.now(),
-                    items: {...payload}
+                    items: {...payload},
+                    user
                 })
                 
             })
-            console.log(response)
+            console.log(JSON.stringify(response), user)
             dispatch({
                 type: CONFIRM_CART,
                 confirm: true,
-
+                
             })
         } catch {
-            console.log(error.message)
+            console.log('No Funciona',error.message)
         }
     } 
 }

@@ -2,7 +2,6 @@ import { Button, StyleSheet, Text, View } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 
 import React from 'react'
-import ShowCart from '../components/ShowCart'
 import { addItem } from '../store/actions/cart.action'
 
 const BreadDetailScreen = ({navigation}) => {
@@ -23,9 +22,6 @@ const BreadDetailScreen = ({navigation}) => {
             </View>
             <View>
                 <Button title="Agregar Al carrito" onPress={handleAddItem}></Button>
-            </View>
-            <View>
-                <ShowCart navigation={navigation} />
             </View>
         </View>
     )
